@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('nfts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained('nft_categories')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }
