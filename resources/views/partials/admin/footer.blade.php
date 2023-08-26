@@ -1,13 +1,13 @@
-@php
-    use App\Models\Utility;
-    $get_cookie = \App\Models\Utility::getCookieSetting();
+{{--@php--}}
+{{--    use App\Models\Utility;--}}
+{{--    $get_cookie = \App\Models\Utility::getCookieSetting();--}}
 
-@endphp
+{{--@endphp--}}
 <!-- [ Main Content ] end -->
 <footer class="dash-footer">
     <div class="footer-wrapper">
         <div class="py-1">
-            <span class="text-muted">  {{(Utility::getValByName('footer_text')) ? Utility::getValByName('footer_text') :  __('Copyright FintechCoin') }} {{ date('Y') }}</span>
+{{--            <span class="text-muted">  {{(Utility::getValByName('footer_text')) ? Utility::getValByName('footer_text') :  __('Copyright FintechCoin') }} {{ date('Y') }}</span>--}}
         </div>
     </div>
 </footer>
@@ -41,8 +41,8 @@
 {{--<script src="{{ asset ('js/bootstrap.min.js') }}"></script>--}}
 
 <script>
-    var site_currency_symbol_position = '{{ \App\Models\Utility::getValByName('site_currency_symbol_position') }}';
-    var site_currency_symbol = '{{ \App\Models\Utility::getValByName('site_currency_symbol') }}';
+    {{--var site_currency_symbol_position = '{{ \App\Models\Utility::getValByName('site_currency_symbol_position') }}';--}}
+    {{--var site_currency_symbol = '{{ \App\Models\Utility::getValByName('site_currency_symbol') }}';--}}
 </script>
 <script src="{{ asset('js/custom.js') }}"></script>
 
@@ -56,9 +56,9 @@
         show_toastr('error', '{!! $message !!}');
     </script>
 @endif
-@if($get_cookie['enable_cookie'] == 'on')
-    @include('layouts.cookie_consent')
-@endif
+{{--@if($get_cookie['enable_cookie'] == 'on')--}}
+{{--    @include('layouts.cookie_consent')--}}
+{{--@endif--}}
 @stack('script-page')
 
 @stack('old-datatable-js')
