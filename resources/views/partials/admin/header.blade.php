@@ -1,15 +1,15 @@
-@php
-    $users=\Auth::user();
-    //$profile=asset(Storage::url('uploads/avatar/'));
-    $profile=\App\Models\Utility::get_file('uploads/avatar/');
-    $languages=\App\Models\Utility::languages();
-    $lang = isset($users->lang)?$users->lang:'en';
-    $setting = \App\Models\Utility::colorset();
-    $mode_setting = \App\Models\Utility::mode_layout();
+{{--@php--}}
+{{--    $users=\Auth::user();--}}
+{{--    //$profile=asset(Storage::url('uploads/avatar/'));--}}
+{{--    $profile=\App\Models\Utility::get_file('uploads/avatar/');--}}
+{{--    $languages=\App\Models\Utility::languages();--}}
+{{--    $lang = isset($users->lang)?$users->lang:'en';--}}
+{{--    $setting = \App\Models\Utility::colorset();--}}
+{{--    $mode_setting = \App\Models\Utility::mode_layout();--}}
 
 
-    $unseenCounter=App\Models\ChMessage::where('to_id', Auth::user()->id)->where('seen', 0)->count();
-@endphp
+{{--    $unseenCounter=App\Models\ChMessage::where('to_id', Auth::user()->id)->where('seen', 0)->count();--}}
+{{--@endphp--}}
 @if (isset($setting['cust_theme_bg']) && $setting['cust_theme_bg'] == 'on')
     <header class="dash-header transprent-bg">
 @else

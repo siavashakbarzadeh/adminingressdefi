@@ -20,39 +20,39 @@
 
 {{--@endphp--}}
     <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{$SITE_RTL == 'on' ? 'rtl' : '' }}">
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{$SITE_RTL == 'on' ? 'rtl' : '' }}">--}}
 
 
 <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
 <head>
-    <title>{{(Utility::getValByName('title_text')) ? Utility::getValByName('title_text') : config('app.name', 'ERPGO')}} - @yield('page-title')</title>
+{{--    <title>{{(Utility::getValByName('title_text')) ? Utility::getValByName('title_text') : config('app.name', 'ERPGO')}} - @yield('page-title')</title>--}}
 
-    <meta name="title" content="{{$metatitle}}">
-    <meta name="description" content="{{$metsdesc}}">
+{{--    <meta name="title" content="{{$metatitle}}">--}}
+{{--    <meta name="description" content="{{$metsdesc}}">--}}
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ env('APP_URL') }}">
-    <meta property="og:title" content="{{$metatitle}}">
-    <meta property="og:description" content="{{$metsdesc}}">
-    <meta property="og:image" content="{{$meta_image.$meta_logo}}">
+{{--    <!-- Open Graph / Facebook -->--}}
+{{--    <meta property="og:type" content="website">--}}
+{{--    <meta property="og:url" content="{{ env('APP_URL') }}">--}}
+{{--    <meta property="og:title" content="{{$metatitle}}">--}}
+{{--    <meta property="og:description" content="{{$metsdesc}}">--}}
+{{--    <meta property="og:image" content="{{$meta_image.$meta_logo}}">--}}
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ env('APP_URL') }}">
-    <meta property="twitter:title" content="{{$metatitle}}">
-    <meta property="twitter:description" content="{{$metsdesc}}">
-    <meta property="twitter:image" content="{{$meta_image.$meta_logo}}">
+{{--    <!-- Twitter -->--}}
+{{--    <meta property="twitter:card" content="summary_large_image">--}}
+{{--    <meta property="twitter:url" content="{{ env('APP_URL') }}">--}}
+{{--    <meta property="twitter:title" content="{{$metatitle}}">--}}
+{{--    <meta property="twitter:description" content="{{$metsdesc}}">--}}
+{{--    <meta property="twitter:image" content="{{$meta_image.$meta_logo}}">--}}
 
 
-    <script src="{{ asset('js/html5shiv.js') }}"></script>
+{{--    <script src="{{ asset('js/html5shiv.js') }}"></script>--}}
 
-    <!-- Meta -->
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="url" content="{{ url('').'/'.config('chatify.path') }}" data-user="{{ Auth::user()->id }}">
-    <link rel="icon" href="{{$logo.'/'.(isset($company_favicon) && !empty($company_favicon)?$company_favicon:'favicon.png')}}" type="image" sizes="16x16">
+{{--    <!-- Meta -->--}}
+{{--    <meta charset="utf-8"/>--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>--}}
+{{--    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>--}}
+{{--    <meta name="url" content="{{ url('').'/'.config('chatify.path') }}" data-user="{{ Auth::user()->id }}">--}}
+{{--    <link rel="icon" href="{{$logo.'/'.(isset($company_favicon) && !empty($company_favicon)?$company_favicon:'favicon.png')}}" type="image" sizes="16x16">--}}
 
     <!-- Calendar-->
     @stack('css-page')
@@ -71,21 +71,22 @@
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap-switch-button.min.css') }}">
 
     <!-- vendor css -->
-    @if ($SITE_RTL == 'on')
-        <link rel="stylesheet" href="{{ asset('assets/css/style-rtl.css') }}">
-    @endif
-    @if ($setting['cust_darklayout'] == 'on')
-        <link rel="stylesheet" href="{{ asset('assets/css/style-dark.css') }}">
-    @else
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" id="main-style-link">
-    @endif
+{{--    @if ($SITE_RTL == 'on')--}}
+{{--        <link rel="stylesheet" href="{{ asset('assets/css/style-rtl.css') }}">--}}
+{{--    @endif--}}
+{{--    @if ($setting['cust_darklayout'] == 'on')--}}
+{{--        <link rel="stylesheet" href="{{ asset('assets/css/style-dark.css') }}">--}}
+{{--    @else--}}
+{{--        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" id="main-style-link">--}}
+{{--    @endif--}}
 
     <link rel="stylesheet" href="{{ asset('assets/css/customizer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}" id="main-style-link">
 
     @stack('css-page')
 </head>
-<body class="{{ $color }}">
+{{--<body class="{{ $color }}">--}}
+<body class="">
 
 
 <!-- [ Pre-loader ] start -->
