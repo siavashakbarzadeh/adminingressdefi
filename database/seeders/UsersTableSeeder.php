@@ -26,5 +26,19 @@ class UsersTableSeeder extends Seeder
                 'email_verified_at' => now(),
             ]
         );
+        $company = User::create(
+            [
+                'name' => 'company',
+                'email' => 'company@m.icoa.it',
+                'password' => Hash::make('1234'),
+                'type' => 'company',
+                'default_pipeline' => 1,
+                'plan' => 1,
+                'lang' => 'en',
+                'avatar' => '',
+                'created_by' => 1,
+                'email_verified_at' => now(),
+            ]
+        );
     }
 }
