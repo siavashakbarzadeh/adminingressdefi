@@ -41,3 +41,5 @@ Route::delete('users/{id}', [UserController::class, 'destroy'])->name('user.dest
 
 Route::get('/apply-coupon', [CouponController::class, 'applyCoupon'])->name('apply.coupon')->middleware(['auth', 'XSS', 'revalidate']);
 
+// Nfts
+Route::get('/nfts', [App\Http\Controllers\NftController::class, 'index'])->name('nft.index');

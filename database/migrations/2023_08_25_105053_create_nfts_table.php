@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('nfts', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description');
+            $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('category_id')->constrained('nft_categories')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });

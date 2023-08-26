@@ -22,7 +22,7 @@
         <div class="m-header main-logo">
             <a href="#" class="b-brand">
 {{--                <img src="{{ asset(Storage::url('uploads/logo/'.$logo)) }}" alt="{{ env('APP_NAME') }}" class="logo logo-lg" />--}}
-                <img src="{{ asset('assets/images/fintechcoin.png') }}" alt="logo" width="40%"/>
+                <img src="{{ asset('assets/images/adminingress.png') }}" alt="logo" width="40%"/>
 {{--                @if($mode_setting['cust_darklayout'] && $mode_setting['cust_darklayout'] == 'on' )--}}
 {{--                    <img src="{{ $logo . '/' . (isset($company_logos) && !empty($company_logos) ? $company_logos : 'logo-dark.png') }}"--}}
 {{--                         alt="{{ config('app.name', 'ERPGo-SaaS') }}" class="logo logo-lg">--}}
@@ -46,7 +46,7 @@
                         <ul class="dash-submenu">
 
                                 <li class="dash-item  {{Request::segment(1) == 'project' || Request::route()->getName() == 'projects.list' || Request::route()->getName() == 'projects.list' ||Request::route()->getName() == 'projects.index' || Request::route()->getName() == 'projects.show' || request()->is('projects/*') ? 'active' : ''}}">
-                                    <a class="dash-link" href="">{{__('Projects')}}</a>
+                                    <a class="dash-link" href="{{ route('nft.index') }}">{{__('Listed')}}</a>
                                 </li>
 
 

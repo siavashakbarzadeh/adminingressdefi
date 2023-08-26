@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Nft;
 use App\Http\Requests\StoreNftRequest;
 use App\Http\Requests\UpdateNftRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class NftController extends Controller
 {
@@ -13,7 +15,10 @@ class NftController extends Controller
      */
     public function index()
     {
-        //
+
+        $nfts= Nft::all();
+        return view('nft.index', compact('nfts'));
+//        dd('ok');
     }
 
     /**
