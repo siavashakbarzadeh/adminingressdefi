@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\NftCategory;
 use App\Http\Requests\StoreNftCategoryRequest;
 use App\Http\Requests\UpdateNftCategoryRequest;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class NftCategoryController extends Controller
 {
@@ -13,7 +15,10 @@ class NftCategoryController extends Controller
      */
     public function index()
     {
-        //
+
+        $nftcategories = NftCategory::all();
+        return view('category.index')->with('nftcategories', $nftcategories);
+//        dd('ok');
     }
 
     /**

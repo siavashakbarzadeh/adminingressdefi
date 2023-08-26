@@ -38,6 +38,88 @@
             @if((\Auth::user()->type == 'super admin'))
                 <ul class="dash-navbar">
                     <li class="dash-item dash-hasmenu
+                                             ">
+                        <a href="#!" class="dash-link"><span class="dash-micon"><i class="ti ti-share"></i></span><span class="dash-mtext">{{__('Manage category')}}</span><span class="dash-arrow"><i data-feather="chevron-right"></i></span></a>
+                        <ul class="dash-submenu">
+
+                                <li class="dash-item  {{Request::segment(1) == 'project' || Request::route()->getName() == 'projects.list' || Request::route()->getName() == 'projects.list' ||Request::route()->getName() == 'projects.index' || Request::route()->getName() == 'projects.show' || request()->is('projects/*') ? 'active' : ''}}">
+                                    <a class="dash-link" href="{{ route('category.index') }}">{{__('Listed')}}</a>
+                                </li>
+
+
+                                <li class="dash-item {{ (request()->is('taskboard*') ? 'active' : '')}}">
+{{--                                    <a class="dash-link" href="{{ route('taskBoard.view', 'list') }}">{{__('Tasks')}}</a>--}}
+                                    <a class="dash-link" href="{{ route('category.create') }}">{{__('Add')}}</a>
+                                </li>
+
+
+
+                        </ul>
+                    </li>
+                    <li class="dash-item dash-hasmenu
+                                             ">
+                        <a href="#!" class="dash-link"><span class="dash-micon"><i class="ti ti-share"></i></span><span class="dash-mtext">{{__('Manage vitrina')}}</span><span class="dash-arrow"><i data-feather="chevron-right"></i></span></a>
+                        <ul class="dash-submenu">
+
+                                <li class="dash-item  {{Request::segment(1) == 'project' || Request::route()->getName() == 'projects.list' || Request::route()->getName() == 'projects.list' ||Request::route()->getName() == 'projects.index' || Request::route()->getName() == 'projects.show' || request()->is('projects/*') ? 'active' : ''}}">
+                                    <a class="dash-link" href="{{ route('nft.index') }}">{{__('Listed')}}</a>
+                                </li>
+
+
+                                <li class="dash-item {{ (request()->is('taskboard*') ? 'active' : '')}}">
+{{--                                    <a class="dash-link" href="{{ route('taskBoard.view', 'list') }}">{{__('Tasks')}}</a>--}}
+                                    <a class="dash-link" href="">{{__('Tasks')}}</a>
+                                </li>
+
+
+
+                        </ul>
+                    </li>
+                    <li class="dash-item dash-hasmenu
+                                            {{ ( Request::segment(1) == 'project' || Request::segment(1) == 'bugs-report' || Request::segment(1) == 'bugstatus' ||
+                                                 Request::segment(1) == 'project-task-stages' || Request::segment(1) == 'calendar' || Request::segment(1) == 'timesheet-list' ||
+                                                 Request::segment(1) == 'taskboard' || Request::segment(1) == 'timesheet-list' || Request::segment(1) == 'taskboard' ||
+                                                 Request::segment(1) == 'project' || Request::segment(1) == 'projects' || Request::segment(1) == 'project_report') ? 'active dash-trigger' : ''}}">
+                        <a href="#!" class="dash-link"><span class="dash-micon"><i class="ti ti-share"></i></span><span class="dash-mtext">{{__('Manage shipping')}}</span><span class="dash-arrow"><i data-feather="chevron-right"></i></span></a>
+                        <ul class="dash-submenu">
+
+                                <li class="dash-item  {{Request::segment(1) == 'project' || Request::route()->getName() == 'projects.list' || Request::route()->getName() == 'projects.list' ||Request::route()->getName() == 'projects.index' || Request::route()->getName() == 'projects.show' || request()->is('projects/*') ? 'active' : ''}}">
+                                    <a class="dash-link" href="{{ route('nft.index') }}">{{__('Listed')}}</a>
+                                </li>
+
+
+                                <li class="dash-item {{ (request()->is('taskboard*') ? 'active' : '')}}">
+{{--                                    <a class="dash-link" href="{{ route('taskBoard.view', 'list') }}">{{__('Tasks')}}</a>--}}
+                                    <a class="dash-link" href="">{{__('Tasks')}}</a>
+                                </li>
+
+
+
+                        </ul>
+                    </li>
+                    <li class="dash-item dash-hasmenu
+                                            {{ ( Request::segment(1) == 'project' || Request::segment(1) == 'bugs-report' || Request::segment(1) == 'bugstatus' ||
+                                                 Request::segment(1) == 'project-task-stages' || Request::segment(1) == 'calendar' || Request::segment(1) == 'timesheet-list' ||
+                                                 Request::segment(1) == 'taskboard' || Request::segment(1) == 'timesheet-list' || Request::segment(1) == 'taskboard' ||
+                                                 Request::segment(1) == 'project' || Request::segment(1) == 'projects' || Request::segment(1) == 'project_report') ? 'active dash-trigger' : ''}}">
+                        <a href="#!" class="dash-link"><span class="dash-micon"><i class="ti ti-share"></i></span><span class="dash-mtext">{{__('Manage Bid')}}</span><span class="dash-arrow"><i data-feather="chevron-right"></i></span></a>
+                        <ul class="dash-submenu">
+
+                                <li class="dash-item  {{Request::segment(1) == 'project' || Request::route()->getName() == 'projects.list' || Request::route()->getName() == 'projects.list' ||Request::route()->getName() == 'projects.index' || Request::route()->getName() == 'projects.show' || request()->is('projects/*') ? 'active' : ''}}">
+                                    <a class="dash-link" href="{{ route('nft.index') }}">{{__('Listed')}}</a>
+                                </li>
+
+
+                                <li class="dash-item {{ (request()->is('taskboard*') ? 'active' : '')}}">
+{{--                                    <a class="dash-link" href="{{ route('taskBoard.view', 'list') }}">{{__('Tasks')}}</a>--}}
+                                    <a class="dash-link" href="">{{__('Tasks')}}</a>
+                                </li>
+
+
+
+                        </ul>
+                    </li>
+                    <li class="dash-item dash-hasmenu
                                             {{ ( Request::segment(1) == 'project' || Request::segment(1) == 'bugs-report' || Request::segment(1) == 'bugstatus' ||
                                                  Request::segment(1) == 'project-task-stages' || Request::segment(1) == 'calendar' || Request::segment(1) == 'timesheet-list' ||
                                                  Request::segment(1) == 'taskboard' || Request::segment(1) == 'timesheet-list' || Request::segment(1) == 'taskboard' ||
