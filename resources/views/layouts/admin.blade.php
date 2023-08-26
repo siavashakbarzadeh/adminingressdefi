@@ -56,19 +56,28 @@
 
     <!-- Calendar-->
     @stack('css-page')
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/landing.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/flatpickr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/animate.min.css') }}">
-
-    <!-- font css -->
     <link rel="stylesheet" href="{{ asset('assets/fonts/tabler-icons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/fonts/feather.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/fonts/material.css') }}">
+    <script type="text/javascript" src="{{asset('js/app.js')}}" ></script>
+    <script type="text/javascript" src="{{asset('js/jquery.min.js')}}" ></script>
+{{--    <link rel="stylesheet" href="{{ asset('assets/css/plugins/main.css') }}">--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/css/plugins/style.css') }}">--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/css/plugins/flatpickr.min.css') }}">--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/css/plugins/animate.min.css') }}">--}}
 
-    <!--bootstrap switch-->
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap-switch-button.min.css') }}">
+{{--    <!-- font css -->--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/fonts/tabler-icons.min.css') }}">--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/fonts/feather.css') }}">--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css') }}">--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/fonts/material.css') }}">--}}
+
+{{--    <!--bootstrap switch-->--}}
+{{--    <link rel="stylesheet" href="{{ asset('assets/css/plugins/bootstrap-switch-button.min.css') }}">--}}
 
     <!-- vendor css -->
 {{--    @if ($SITE_RTL == 'on')--}}
