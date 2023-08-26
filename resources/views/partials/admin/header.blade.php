@@ -38,19 +38,20 @@
                         aria-expanded="false"
                     >
                         <span class="theme-avtar">
-                             <img src="{{ !empty(\Auth::user()->avatar) ? $profile . \Auth::user()->avatar :  $profile.'avatar.png'}}" class="img-fluid rounded-circle">
+{{--                             <img src="{{ !empty(\Auth::user()->avatar) ? $profile . \Auth::user()->avatar :  $profile.'avatar.png'}}" class="img-fluid rounded-circle">--}}
                         </span>
                         <span class="hide-mob ms-2">{{__('Hi, ')}}{{\Auth::user()->name }}!</span>
                         <i class="ti ti-chevron-down drp-arrow nocolor hide-mob"></i>
                     </a>
                     <div class="dropdown-menu dash-h-dropdown">
 
-                        <!-- <a href="{{ route('change.mode') }}" class="dropdown-item">
-                            <i class="ti ti-circle-plus"></i>
-                            <span>{{(Auth::user()->mode == 'light') ? __('Dark Mode') : __('Light Mode')}}</span>
-                        </a> -->
+{{--                        <!-- <a href="{{ route('change.mode') }}" class="dropdown-item">--}}
+{{--                            <i class="ti ti-circle-plus"></i>--}}
+{{--                            <span>{{(Auth::user()->mode == 'light') ? __('Dark Mode') : __('Light Mode')}}</span>--}}
+{{--                        </a> -->--}}
 
-                        <a href="{{route('profile')}}" class="dropdown-item">
+{{--                        <a href="{{route('profile')}}" class="dropdown-item">--}}
+                        <a href="" class="dropdown-item">
                             <i class="ti ti-user"></i>
                             <span>{{__('Profile')}}</span>
                         </a>
@@ -75,10 +76,10 @@
                         <a class="dash-head-link arrow-none me-0" href="{{ url('chats') }}" aria-haspopup="false"
                            aria-expanded="false">
                             <i class="ti ti-brand-hipchat"></i>
-                            <span class="bg-danger dash-h-badge message-toggle-msg  message-counter custom_messanger_counter beep"> {{ $unseenCounter }}<span
-                                    class="sr-only"></span>
-                            </span>
-                        </a>
+{{--                            <span class="bg-danger dash-h-badge message-toggle-msg  message-counter custom_messanger_counter beep"> {{ $unseenCounter }}<span--}}
+{{--                                    class="sr-only"></span>--}}
+{{--                            </span>--}}
+{{--                        </a>--}}
                     </li>
                 @endif
 
@@ -100,16 +101,16 @@
                     </a>
                     <div class="dropdown-menu dash-h-dropdown dropdown-menu-end">
 
-                        @foreach($languages as $language)
-                            <a href="{{route('change.language',$language)}}" class="dropdown-item @if($language == $lang) text-danger @endif">
-                                <span>{{Str::upper($language)}}</span>
-                            </a>
-                        @endforeach
+{{--                        @foreach($languages as $language)--}}
+{{--                            <a href="{{route('change.language',$language)}}" class="dropdown-item @if($language == $lang) text-danger @endif">--}}
+{{--                                <span>{{Str::upper($language)}}</span>--}}
+{{--                            </a>--}}
+{{--                        @endforeach--}}
                         <h></h>
-                            @if(\Auth::user()->type=='super admin')
+{{--                            @if(\Auth::user()->type=='super admin')--}}
 
-                                <a class="dropdown-item text-primary" href="{{route('manage.language',[isset($lang)?$lang:'en'])}}">{{ __('Manage Language ') }}</a>
-                            @endif
+{{--                                <a class="dropdown-item text-primary" href="{{route('manage.language',[isset($lang)?$lang:'en'])}}">{{ __('Manage Language ') }}</a>--}}
+{{--                            @endif--}}
                     </div>
                 </li>
             </ul>
