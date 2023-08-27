@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
+            $table->boolean('is_vitrina')->default(0);
             $table->foreignId('user_id')->constrained('users')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('category_id')->constrained('nft_categories')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();

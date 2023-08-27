@@ -26,7 +26,8 @@ class NftCategoryController extends Controller
      */
     public function create()
     {
-        //
+//        return view('bank-transfer.create', compact('bankAccount'));
+        return view('category.create');
     }
 
     /**
@@ -34,7 +35,7 @@ class NftCategoryController extends Controller
      */
     public function store(StoreNftCategoryRequest $request)
     {
-        //
+        dd('ok');
     }
 
     /**

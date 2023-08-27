@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\NftCategory;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class NftCategorySeeder extends Seeder
 {
@@ -12,6 +15,19 @@ class NftCategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $category = NftCategory::create(
+            [
+                'name' => 'pictures',
+                'description' => 'moooo',
+
+            ]
+        );
+        $category = NftCategory::create(
+            [
+                'name' => 'music',
+                'description' => 'dgdfgdf',
+
+            ]
+        );
     }
 }

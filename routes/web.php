@@ -44,5 +44,7 @@ Route::get('/apply-coupon', [CouponController::class, 'applyCoupon'])->name('app
 // Nfts
 Route::get('/nfts', [App\Http\Controllers\NftController::class, 'index'])->name('nft.index');
 // Categories
-Route::get('/categories', [App\Http\Controllers\NftCategoryController::class, 'index'])->name('category.index');
+Route::get('/category', [App\Http\Controllers\NftCategoryController::class, 'index'])->name('category.index');
 Route::get('/categoriescreate', [App\Http\Controllers\NftCategoryController::class,'create'])->name('category.create');
+Route::post('/categoriesstore', [App\Http\Controllers\NftCategoryController::class,'store'])->name('category.store');
+
