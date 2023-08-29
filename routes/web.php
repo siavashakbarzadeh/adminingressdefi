@@ -24,6 +24,7 @@ Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])-
 // User Module
 
 Route::get('users/{view?}', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+Route::get('users/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
 Route::get('users-view', [UserController::class, 'filterUserView'])->name('filter.user.view')->middleware(['auth', 'XSS']);
 Route::get('checkuserexists', [UserController::class, 'checkUserExists'])->name('user.exists')->middleware(['auth', 'XSS']);
 Route::get('profile', [UserController::class, 'profile'])->name('profile')->middleware(['auth', 'XSS']);

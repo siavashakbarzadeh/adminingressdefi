@@ -15,7 +15,8 @@
 @else
     <header class="dash-header">
 @endif
-    <div class="header-wrapper">
+
+    <div class="header-wrapper ">
         <div class="me-auto dash-mob-drp">
             <ul class="list-unstyled">
                 <li class="dash-h-item mob-hamburger">
