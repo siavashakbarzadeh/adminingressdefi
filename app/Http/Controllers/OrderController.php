@@ -7,6 +7,7 @@ use App\Models\Coupon;
 use App\Models\Customer;
 use App\Models\Invoice;
 use App\Models\InvoicePayment;
+use App\Models\Nft;
 use App\Models\Order;
 use App\Models\Plan;
 use App\Models\Transaction;
@@ -24,23 +25,25 @@ class OrderController extends Controller
 
     public function index()
     {
-        $objUser = \Auth::user();
-        if($objUser->type == 'super admin')
-        {
-            $orders = Order::select([
-                                        'orders.*',
-                                        'users.name as user_name',
-                                    ])->join('users', 'orders.user_id', '=', 'users.id')->orderBy('orders.created_at', 'DESC')->get();
-        }
-        else
-        {
-            $orders = Order::select([
-                                        'orders.*',
-                                        'users.name as user_name',
-                                    ])->join('users', 'orders.user_id', '=', 'users.id')->orderBy('orders.created_at', 'DESC')->where('users.id', '=', $objUser->id)->get();
-        }
-
+        $orders= Order::all();
         return view('order.index', compact('orders'));
+//        $objUser = \Auth::user();
+//        if($objUser->type == 'super admin')
+//        {
+//            $orders = Order::select([
+//                                        'orders.*',
+//                                        'users.name as user_name',
+//                                    ])->join('users', 'orders.user_id', '=', 'users.id')->orderBy('orders.created_at', 'DESC')->get();
+//        }
+//        else
+//        {
+//            $orders = Order::select([
+//                                        'orders.*',
+//                                        'users.name as user_name',
+//                                    ])->join('users', 'orders.user_id', '=', 'users.id')->orderBy('orders.created_at', 'DESC')->where('users.id', '=', $objUser->id)->get();
+//        }
+//
+//        return view('order.index', compact('orders'));
     }
 
 

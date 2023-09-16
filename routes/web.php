@@ -48,4 +48,7 @@ Route::get('/nfts', [App\Http\Controllers\NftController::class, 'index'])->name(
 Route::get('/category', [App\Http\Controllers\NftCategoryController::class, 'index'])->name('category.index');
 Route::get('/categoriescreate', [App\Http\Controllers\NftCategoryController::class,'create'])->name('category.create');
 Route::post('/categoriesstore', [App\Http\Controllers\NftCategoryController::class,'store'])->name('category.store');
-
+// Shippings
+Route::get('/shippings', [App\Http\Controllers\ShippingController::class, 'index'])->name('shipping.index');
+// bids
+Route::get('/bids', [App\Http\Controllers\BidController::class, 'index'])->name('bid.index');

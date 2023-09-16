@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
 @section('page-title')
-    {{__('Orders')}}
+    {{__('bids')}}
 @endsection
 
 @section('breadcrumb')
 {{--    <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('Dashboard')}}</a></li>--}}
     <li class="breadcrumb-item"><a href="">{{__('Dashboard')}}</a></li>
-    <li class="breadcrumb-item">{{__('Order')}}</li>
+    <li class="breadcrumb-item">{{__('bid')}}</li>
 @endsection
 
 
@@ -15,12 +15,12 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-body table-border-style">
+                <div class="card-body table-bbid-style">
                     <div class="table-responsive">
                         <table class="table datatable">
                             <thead>
                             <tr>
-                                <th>{{__('Order Id')}}</th>
+                                <th>{{__('bid Id')}}</th>
                                 <th>{{__('Name')}}</th>
                                 <th>{{__('Plan Name')}}</th>
                                 <th>{{__('Price')}}</th>
@@ -33,29 +33,30 @@
                             </thead>
 
                             <tbody>
-                            @foreach($orders as $order)
+                            @foreach($bids as $bid)
                                 <tr>
-                                    <td>{{$order->order_id}}</td>
-                                    <td>{{$order->user_name}}</td>
-                                    <td>{{$order->plan_name}}</td>
-                                    <td>{{env('CURRENCY_SYMBOL')}}{{number_format($order->price)}}</td>
+                                    <td>{{$bid->id}}</td>
+                                    <td>{{$bid->user_id}}</td>
+                                    <td>{{$bid->nft_id }}</td>
+
+                                    <td>{{env('CURRENCY_SYMBOL')}}{{number_format($bid->bid_amount)}}</td>
                                     <td>
-                                        @if($order->payment_status == 'succeeded')
-                                            <span class="status_badge badge bg-primary p-2 px-3 rounded">{{ucfirst($order->payment_status)}}</span>
+                                        @if($bid->payment_status == 'succeeded')
+                                            <span class="status_badge badge bg-primary p-2 px-3 rounded">{{ucfirst($bid->payment_status)}}</span>
                                         @else
-                                            <span class="status_badge badge bg-danger p-2 px-3 rounded">{{ucfirst($order->payment_status)}}</span>
+                                            <span class="status_badge badge bg-danger p-2 px-3 rounded">{{ucfirst($bid->payment_status)}}</span>
                                         @endif
                                     </td>
-                                    <td>{{$order->payment_type}}</td>
-                                    <td>{{$order->created_at->format('d M Y')}}</td>
-                                    <td>{{!empty($order->use_coupon)?$order->use_coupon->coupon_detail->name:'-'}}</td>
+                                    <td>{{$bid->payment_type}}</td>
+                                    <td>{{$bid->created_at->format('d M Y')}}</td>
+                                    <td>{{!empty($bid->use_coupon)?$bid->use_coupon->coupon_detail->name:'-'}}</td>
                                     <td class="Id">
-                                        @if(empty($order->receipt))
+                                        @if(empty($bid->receipt))
                                             <p>{{__('Manually plan upgraded by Super Admin')}}</p>
-                                        @elseif($order->receipt =='free coupon')
+                                        @elseif($bid->receipt =='free coupon')
                                             <p>{{__('Used 100 % discount coupon code.')}}</p>
                                         @else
-                                            <a href="{{$order->receipt}}" target="_blank"><i class="ti ti-file-invoice"></i> {{__('Invoice')}}</a>
+                                            <a href="{{$bid->receipt}}" target="_blank"><i class="ti ti-file-invoice"></i> {{__('Invoice')}}</a>
                                         @endif
                                     </td>
                                 </tr>

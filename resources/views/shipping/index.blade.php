@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
 @section('page-title')
-    {{__('Orders')}}
+    {{__('shippings')}}
 @endsection
 
 @section('breadcrumb')
 {{--    <li class="breadcrumb-item"><a href="{{route('dashboard')}}">{{__('Dashboard')}}</a></li>--}}
     <li class="breadcrumb-item"><a href="">{{__('Dashboard')}}</a></li>
-    <li class="breadcrumb-item">{{__('Order')}}</li>
+    <li class="breadcrumb-item">{{__('shipping')}}</li>
 @endsection
 
 
@@ -15,12 +15,12 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-body table-border-style">
+                <div class="card-body table-bshipping-style">
                     <div class="table-responsive">
                         <table class="table datatable">
                             <thead>
                             <tr>
-                                <th>{{__('Order Id')}}</th>
+                                <th>{{__('shipping Id')}}</th>
                                 <th>{{__('Name')}}</th>
                                 <th>{{__('Plan Name')}}</th>
                                 <th>{{__('Price')}}</th>
@@ -33,29 +33,31 @@
                             </thead>
 
                             <tbody>
-                            @foreach($orders as $order)
+                            @foreach($shippings as $shipping)
                                 <tr>
-                                    <td>{{$order->order_id}}</td>
-                                    <td>{{$order->user_name}}</td>
-                                    <td>{{$order->plan_name}}</td>
-                                    <td>{{env('CURRENCY_SYMBOL')}}{{number_format($order->price)}}</td>
+                                    <td>{{$shipping->id}}</td>
+                                    <td>{{$shipping->user_id}}</td>
+                                    <td>{{$shipping->order_id}}</td>
+                                    <td>{{$shipping->shipment_status}}</td>
+                                    <td>{{$shipping->tracking_number}}</td>
+
                                     <td>
-                                        @if($order->payment_status == 'succeeded')
-                                            <span class="status_badge badge bg-primary p-2 px-3 rounded">{{ucfirst($order->payment_status)}}</span>
+                                        @if($shipping->payment_status == 'succeeded')
+                                            <span class="status_badge badge bg-primary p-2 px-3 rounded">{{ucfirst($shipping->payment_status)}}</span>
                                         @else
-                                            <span class="status_badge badge bg-danger p-2 px-3 rounded">{{ucfirst($order->payment_status)}}</span>
+                                            <span class="status_badge badge bg-danger p-2 px-3 rounded">{{ucfirst($shipping->payment_status)}}</span>
                                         @endif
                                     </td>
-                                    <td>{{$order->payment_type}}</td>
-                                    <td>{{$order->created_at->format('d M Y')}}</td>
-                                    <td>{{!empty($order->use_coupon)?$order->use_coupon->coupon_detail->name:'-'}}</td>
+                                    <td>{{$shipping->payment_type}}</td>
+{{--                                    <td>{{$shipping->created_at->format('d M Y')}}</td>--}}
+{{--                                    <td>{{!empty($shipping->use_coupon)?$shipping->use_coupon->coupon_detail->name:'-'}}</td>--}}
                                     <td class="Id">
-                                        @if(empty($order->receipt))
+                                        @if(empty($shipping->receipt))
                                             <p>{{__('Manually plan upgraded by Super Admin')}}</p>
-                                        @elseif($order->receipt =='free coupon')
+                                        @elseif($shipping->receipt =='free coupon')
                                             <p>{{__('Used 100 % discount coupon code.')}}</p>
                                         @else
-                                            <a href="{{$order->receipt}}" target="_blank"><i class="ti ti-file-invoice"></i> {{__('Invoice')}}</a>
+                                            <a href="{{$shipping->receipt}}" target="_blank"><i class="ti ti-file-invoice"></i> {{__('Invoice')}}</a>
                                         @endif
                                     </td>
                                 </tr>

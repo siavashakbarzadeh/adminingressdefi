@@ -35,9 +35,9 @@
                             <tbody>
                             @foreach($orders as $order)
                                 <tr>
-                                    <td>{{$order->order_id}}</td>
-                                    <td>{{$order->user_name}}</td>
-                                    <td>{{$order->plan_name}}</td>
+                                    <td>{{$order->id}}</td>
+                                    <td>{{$order->user_id}}</td>
+                                    <td>{{$order->nft_id}}</td>
                                     <td>{{env('CURRENCY_SYMBOL')}}{{number_format($order->price)}}</td>
                                     <td>
                                         @if($order->payment_status == 'succeeded')
@@ -47,8 +47,8 @@
                                         @endif
                                     </td>
                                     <td>{{$order->payment_type}}</td>
-                                    <td>{{$order->created_at->format('d M Y')}}</td>
-                                    <td>{{!empty($order->use_coupon)?$order->use_coupon->coupon_detail->name:'-'}}</td>
+{{--                                    <td>{{$order->created_at->format('d M Y')}}</td>--}}
+{{--                                    <td>{{!empty($order->use_coupon)?$order->use_coupon->coupon_detail->name:'-'}}</td>--}}
                                     <td class="Id">
                                         @if(empty($order->receipt))
                                             <p>{{__('Manually plan upgraded by Super Admin')}}</p>

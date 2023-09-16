@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Shipment;
-use App\Http\Requests\StoreShipmentRequest;
-use App\Http\Requests\UpdateShipmentRequest;
+use App\Models\Order;
+use App\Models\Shipping;
+use App\Http\Requests\StoreShippingRequest;
+use App\Http\Requests\UpdateShippingRequest;
 
-class ShipmentController extends Controller
+class ShippingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $shippings= Shipping::all();
+        return view('shipping.index', compact('shippings'));
     }
 
     /**
@@ -27,7 +29,7 @@ class ShipmentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreShipmentRequest $request)
+    public function store(StoreShippingRequest $request)
     {
         //
     }
@@ -35,7 +37,7 @@ class ShipmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Shipment $shipment)
+    public function show(Shipping $shipping)
     {
         //
     }
@@ -43,7 +45,7 @@ class ShipmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Shipment $shipment)
+    public function edit(Shipping $shipping)
     {
         //
     }
@@ -51,7 +53,7 @@ class ShipmentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateShipmentRequest $request, Shipment $shipment)
+    public function update(UpdateShippingRequest $request, Shipping $shipping)
     {
         //
     }
@@ -59,7 +61,7 @@ class ShipmentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Shipment $shipment)
+    public function destroy(Shipping $shipping)
     {
         //
     }

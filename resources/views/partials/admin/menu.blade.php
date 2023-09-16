@@ -35,7 +35,7 @@
         </div>
         <div class="navbar-content">
 
-            @if((\Auth::user()->type == 'super admin'))
+            @if((Auth::user()->type == 'super admin'))
                 <ul class="dash-navbar">
 
                     <li class="dash-item dash-hasmenu {{ (Request::segment(1) == 'dashboard') ? ' active' : '' }}">
@@ -44,6 +44,7 @@
                             <span class="dash-micon"><i class="ti ti-dashboard"></i></span><span class="dash-mtext">{{__('Dashboard')}}</span>
                         </a>
                     </li>
+
                     <li class="dash-item dash-hasmenu
                                              ">
                         <a href="#!" class="dash-link"><span class="dash-micon"><i class="ti ti-home"></i></span><span class="dash-mtext">{{__('Manage immobiliare')}}</span><span class="dash-arrow"><i data-feather="chevron-right"></i></span></a>
@@ -167,7 +168,7 @@
                         <ul class="dash-submenu">
 
                                 <li class="dash-item  {{Request::segment(1) == 'project' || Request::route()->getName() == 'projects.list' || Request::route()->getName() == 'projects.list' ||Request::route()->getName() == 'projects.index' || Request::route()->getName() == 'projects.show' || request()->is('projects/*') ? 'active' : ''}}">
-                                    <a class="dash-link" href="{{ route('nft.index') }}">{{__('Listed')}}</a>
+                                    <a class="dash-link" href="{{ route('shipping.index') }}">{{__('Listed')}}</a>
                                 </li>
 
 
@@ -189,7 +190,7 @@
                         <ul class="dash-submenu">
 
                                 <li class="dash-item  {{Request::segment(1) == 'project' || Request::route()->getName() == 'projects.list' || Request::route()->getName() == 'projects.list' ||Request::route()->getName() == 'projects.index' || Request::route()->getName() == 'projects.show' || request()->is('projects/*') ? 'active' : ''}}">
-                                    <a class="dash-link" href="{{ route('nft.index') }}">{{__('Listed')}}</a>
+                                    <a class="dash-link" href="{{ route('bid.index') }}">{{__('Listed')}}</a>
                                 </li>
 
 

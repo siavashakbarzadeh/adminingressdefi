@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bid;
 use App\Http\Requests\StoreBidRequest;
 use App\Http\Requests\UpdateBidRequest;
+use App\Models\Shipping;
 
 class BidController extends Controller
 {
@@ -13,7 +14,8 @@ class BidController extends Controller
      */
     public function index()
     {
-        //
+        $bids= Bid::all();
+        return view('bid.index', compact('bids'));
     }
 
     /**

@@ -36,20 +36,20 @@
                             <tbody>
                             @foreach($nfts as $nft)
                                 <tr>
-                                    <td>{{$nft->order_id}}</td>
-                                    <td>{{$nft->user_name}}</td>
-                                    <td>{{$nft->plan_name}}</td>
+                                    <td>{{$nft->id}}</td>
+                                    <td>{{$nft->title}}</td>
+                                    <td>{{$nft->description}}</td>
                                     <td>{{env('CURRENCY_SYMBOL')}}{{number_format($nft->price)}}</td>
                                     <td>
                                         @if($nft->payment_status == 'succeeded')
-                                            <span class="status_badge badge bg-primary p-2 px-3 rounded">{{ucfirst($nft->payment_status)}}</span>
+                                            <span class="status_badge badge bg-primary p-2 px-3 rounded">{{ucfirst($nft->is_vitrina)}}</span>
                                         @else
-                                            <span class="status_badge badge bg-danger p-2 px-3 rounded">{{ucfirst($nft->payment_status)}}</span>
+                                            <span class="status_badge badge bg-danger p-2 px-3 rounded">{{ucfirst($nft->user_id)}}</span>
                                         @endif
                                     </td>
-                                    <td>{{$nft->payment_type}}</td>
-                                    <td>{{$nft->created_at->format('d M Y')}}</td>
-                                    <td>{{!empty($nft->use_coupon)?$nft->use_coupon->coupon_detail->name:'-'}}</td>
+                                    <td>{{$nft->category_id}}</td>
+{{--                                    <td>{{$nft->created_at->format('d M Y')}}</td>--}}
+{{--                                    <td>{{!empty($nft->use_coupon)?$nft->use_coupon->coupon_detail->name:'-'}}</td>--}}
                                     <td class="Id">
                                         @if(empty($nft->receipt))
                                             <p>{{__('Manually plan upgraded by Super Admin')}}</p>
